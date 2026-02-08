@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+  <base href='' />
+  <style class=&quot;fcc-hide-header&quot;>
+    head *, title, meta, link, script {
+      display: none !important;
+    }
+  </style>
+  <script>
+    window.__frameId = 'fcc-project-preview-frame';
+    window.onerror = function(msg) {
+      const string = msg.toLowerCase();
+      if (string.includes('script error')) {
+        msg = 'Build error, open your browser console to learn more.';
+      }
+      console.log(msg);
+      return true;
+    };
+    document.addEventListener('click', function(e) {
+      let element = e.target;
+      while(element && element.nodeName !== 'A') {
+        element = element.parentElement;
+      }
+      if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
+        e.preventDefault();
+        window.parent.window.alert(
+          i18nContent.t('misc.iframe-alert', { externalLink: element.href })
+        )
+      }
+      if (element) {
+        const href = element.getAttribute('href');
+        if (!href || href[0] !== '#' && !href.match(/^https?:\/\//)) {
+          e.preventDefault();
+        }
+        else if (href.match(/^#.+/)) {
+          e.preventDefault();
+          const scrollId = href.substring(1);
+          window.location.hash = scrollId;
+        }
+      }
+    }, false);
+    document.addEventListener('submit', function(e) {
+      const action = e.target.getAttribute('action');
+      e.preventDefault();
+      if (action && action.match(/https?:\/\//)) {
+        window.parent.window.alert(
+          i18nContent.t('misc.iframe-form-submit-alert', { externalLink: action  })
+        )
+      }
+    }, false);
+  </script>
+<head></head><head>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+    <title>Blog Post Card</title>
+    <link rel=&quot;stylesheet&quot; data-href=&quot;styles.css&quot;>
+<style class=&quot;fcc-injected-styles&quot;>body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.blog-post-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 350px;
+    margin: 20px;
+    text-align: center;
+}
+
+.post-img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid #333;
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post-title {
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.post-excerpt {
+    color: #667;
+    margin: 10px 0;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.read-more:hover {
+    background-color: #555;
+}</style></head>
+<body>
+    <div class=&quot;blog-post-card&quot;>
+        <img src=&quot;https://cdn.freecodecamp.org/curriculum/labs/cover-photo.jpg&quot; alt=&quot;Blog Post Image&quot; class=&quot;post-img&quot;>
+        <div class=&quot;post-content&quot;>
+            <h2 class=&quot;post-title&quot;>Learn Web Development in 2024</h2>
+            <p class=&quot;post-excerpt&quot;>Stay ahead of the curve with the latest trends in web development. Discover what's new and exciting in 2024</p>
+            <a href=&quot;#&quot; class=&quot;read-more&quot;>Read More</a>
+        </div>
+    </div>
+
+</body>
