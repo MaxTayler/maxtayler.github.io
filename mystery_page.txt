@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Secret Page</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+	
+    <main>
+        <h1>Max Tayler's Project</h1>
+		<img src="https://cdn.freecodecamp.org/curriculum/labs/cover-photo.jpg&quot" alt="Blog Post Image&quot" class="post-img&quot">
+        <p>You found a secret page!  Here's a link to a.<a/ href = ""><a></p>
+        <h2 class = "secret">Game Dev and Testing</h2>
+       
+</body>
+</footer>
+
+</html>
+
