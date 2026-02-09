@@ -6,6 +6,9 @@ body{
 h1{
   color: blue; 
 }
-secret{
+secret:visited{
+	color: #f0f0f0;
+}
+secret:link{
 	color: #f0f0f0;
 }
